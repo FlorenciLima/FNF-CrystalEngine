@@ -99,8 +99,8 @@ class PlayState extends MusicBeatState
 		['Great', 0.9], //From 80% to 89%
 		['Sick!', 1], //From 90% to 99%
 		['Perfect!!', 1] //The value on this one isn't used actually, since Perfect is always "1"
+['YEAH!!', 1] //From to 100 to 110
 	];
-
 	//event variables
 	private var isCameraOnForcedPos:Bool = false;
 
@@ -2244,9 +2244,9 @@ class PlayState extends MusicBeatState
 	public function updateScore(miss:Bool = false)
 	{
 		scoreTxt.text = 'Score: ' + songScore
-		+ ' | Misses: ' + songMisses
-		+ ' | Rating: ' + ratingName
-		+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) - $ratingFC' : '');
+		+ ' | Combo Breaks: ' + songMisses
+		+ ' | Accuracy: ' + ratingName
+		+ (ratingName != '?' ? ' (${Highscore.floorDecimal(ratingPercent * 100, 2)}%) - ('ratingFC');
 
 		if(ClientPrefs.scoreZoom && !miss && !cpuControlled)
 		{
